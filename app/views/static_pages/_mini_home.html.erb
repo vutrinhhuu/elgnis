@@ -1,0 +1,50 @@
+
+<div class="bg-dark"></div>
+
+<div class="home-information">
+	<h1 class="slogan">さあ、恋人と巡り会いましょう！</h1>
+	<%= link_to "#", class: "btn btn-social btn-lg btn-facebook btn-login" do %>
+		<i class="fab fa-facebook-square"></i> Facebookでログイン
+	<% end %>
+	<br /><br />
+	<%= link_to "#", class: "btn btn-social btn-lg btn-twitter btn-login" do %>
+		<i class="fab fa-twitter-square"></i>Twitterでログイン
+	<% end %>
+	<br /><br />
+	<%= link_to "#", class: "btn btn-social btn-lg btn-google btn-login" do %>
+		<i class="fab fa-google-plus-square"></i> Google+でログイン
+	<% end %>
+	<br /><br />
+	<%= link_to new_user_session_path, class: "btn btn-social btn-lg btn-foursquare btn-login" do %>
+		<i class="fab fa-app-store-ios"></i>巡り愛でログイン
+	<% end %>
+	<br /><br />
+</div>
+
+
+
+
+<script type="text/javascript">
+
+jQuery(function($) {
+
+	$.supersized({
+		slide_interval   :   4000,
+		transition       :   1,
+		transition_speed : 700,
+		slinde_links     : 'blank',
+
+		slides           : [
+
+			{image : 'https://c1.staticflickr.com/1/868/27379758228_748566f881_b.jpg'},
+			{image : 'https://c2.staticflickr.com/8/7302/8726401412_4b303c7dd2_b.jpg'},
+			{image : 'https://c2.staticflickr.com/8/7151/13692441885_5dbf6de450_b.jpg'},
+			{image : 'https://c1.staticflickr.com/9/8066/8166600895_728ae37599_b.jpg'}
+		]
+
+	});
+
+
+});
+
+</script>
