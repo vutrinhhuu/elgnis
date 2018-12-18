@@ -115,7 +115,7 @@ User.create!([
              ])
 Image.create!([
                   {user_id: 2, title:"まだまだ載せたい写真が沢山☺️#ポートレートモデル",
-                   link:"https://scontent-sea1-1.cdninstagram.com/vp/954e290e87cd5d48afe8de07ece7f9a9/5BC87B45/t51.2885-15/e35/36781213_2068297276753938_362114559651086336_n.jpg",
+                   link:"https://instagram.fhan2-3.fna.fbcdn.net/vp/e3b3969c10290f94ce048b13da170df9/5CA2A4E3/t51.2885-15/e35/44444096_421184115085711_175144983089626499_n.jpg?_nc_ht=instagram.fhan2-3.fna.fbcdn.net",
                    created_at:"2018-07-18T13:54:16.000Z",
                   },
                   {user_id: 3, title:". なんか色々さっぱりしたい… . . #三つ編み #ポートレート",
