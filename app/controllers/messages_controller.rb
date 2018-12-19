@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
       redirect_to chats_path
     end
   end
+  
   private
   def message_params
     params.require(:message).permit(:content, :chat_id)

@@ -5,11 +5,21 @@
 
     <!-- Icon -->
     <div class="fadeIn first">
-      <img src="https://cdn2.iconfinder.com/data/icons/creative-outlines-vol-1/512/User_Person_Avatar_Profile_Account_Login_Man-512.png" id="icon" alt="User Icon" />
+      <img src="https://image.flaticon.com/icons/svg/179/179734.svg" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <% if(flash.any?)%>
+          <div id="error_explanation">
+            <h2><%= flash.count %> error prohibited login</h2>
+            <ul>
+              <% flash.each do |key, value| %>
+                <li><%= value %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
         <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "textIn" %>

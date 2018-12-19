@@ -49,7 +49,6 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem "autoprefixer-rails"
 gem 'font-awesome-sass', '~> 5.2.0'
-gem 'omniauth-facebook'
 gem "paperclip"
 gem 'aws-sdk', '< 2.0'
 gem 'simple_form'
@@ -61,3 +60,4 @@ gem 'devise'
 gem 'carrierwave'
 gem 'bcrypt'
 gem 'redis', '~> 3.2'
+gem "omniauth-google-oauth2"

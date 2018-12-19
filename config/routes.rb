@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :friendships
   resources :images
-  devise_for :users
+  devise_for :users, controllers: { confirmations: 'confirmations', :omniauth_callbacks => "users/omniauth_callbacks"  }
   root 'static_pages#home'
 
   resources :users do
