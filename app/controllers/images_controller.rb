@@ -6,7 +6,6 @@ class ImagesController < ApplicationController
   # GET /images.json
   def index
     @images = current_user.images.reverse
-
   end
 
   # GET /images/1

@@ -7,7 +7,10 @@ class MessagesController < ApplicationController
       ActionCable.server.broadcast( "messages_#{message_params[:chat_id]}",
                                     #message and user hold the data we render on the page using javascript
                                     message: message.content,
-                                    user: message.user.name
+                                    user: message.user.name,
+                                    id: message.user.id,
+                                    image_link: message.user.images.first.link,
+                                    image_file: message.user.images.first.file
       )
     else
       redirect_to chats_path

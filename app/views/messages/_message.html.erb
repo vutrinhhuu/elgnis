@@ -1,1 +1,23 @@
-<p><%= message.user.name %>: <%=message.content%></p>
+<% if message.user == current_user %>
+    <div class="message">
+        <figure class="avatar">
+            <% if @my_avatar.file.present?%>
+                <%= image_tag @my_avatar.file %>
+            <% else %>
+                <%= image_tag @my_avatar.link %>
+            <% end %>
+        </figure>
+        <p style="color: #F05408;"><%= message.user.name %>: <span style="color: white"><%=message.content%></span></p>
+    </div>
+<% else %>
+    <div class="message">
+        <figure class="avatar">
+            <% if @avatar.file.present?%>
+                <%= image_tag @avatar.file %>
+            <% else %>
+                <%= image_tag @avatar.link %>
+            <% end %>
+        </figure>
+        <p style="color: #F05408;"><%= message.user.name %>: <span style="color: white"><%=message.content%></span></p>
+    </div>
+<% end %>

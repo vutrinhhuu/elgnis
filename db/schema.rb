@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181219092236) do
+ActiveRecord::Schema.define(version: 20181220005257) do
 
   create_table "chats", force: :cascade do |t|
     t.string "identifier"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20181219092236) do
     t.string "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.integer "gender"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["name"], name: "index_users_on_name", unique: true

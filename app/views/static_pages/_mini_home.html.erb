@@ -2,13 +2,13 @@
 <div class="bg-dark"></div>
 
 <div class="home-information">
-	<h1 class="slogan">さあ、恋人と巡り会いましょう！</h1>
+	<h1 class="slogan">Let's find your lover!</h1>
 	<%= link_to user_google_oauth2_omniauth_authorize_path, class: "btn btn-social btn-lg btn-google btn-login" do %>
-		<i class="fab fa-google-plus-square"></i>Google+でログイン
+		<i class="fab fa-google-plus-square"></i>Login with Google+
 	<% end %>
 	<br /><br />
 	<%= link_to new_user_session_path, class: "btn btn-social btn-lg btn-foursquare btn-login" do %>
-		<i class="fab fa-app-store-ios"></i>巡り愛でログイン
+		<i class="fab fa-app-store-ios"></i>Login with Elgnis
 	<% end %>
 	<br /><br />
 </div>

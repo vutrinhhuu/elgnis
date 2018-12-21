@@ -1,7 +1,7 @@
 <div class="wrapper fadeInDown">
   <div id="formContent" style="overflow-y: scroll; height:600px;">
     <!-- Tabs Titles -->
-    <h2 class="active"> アカウント編集 </h2>
+    <h2 class="active"> Edit account </h2>
 
     <!-- Icon -->
     <div class="fadeIn first">
@@ -27,12 +27,17 @@
           <%= f.number_field :age, class: "textIn" %>
         </div>
 
+        <div class="field">
+          <%= f.label :gender %><br />
+          <%= f.text_field :gender, class: "textIn", :readonly => true %>
+        </div>
+
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>認証中です: <%= resource.unconfirmed_email %></div>
         <% end %>
 
         <div class="field">
-          <%= f.label :password %> <i>(新しいパスワードを入力してください。)</i><br />
+          <%= f.label :password %> <i>(Please enter a new password.)</i><br />
           <%= f.password_field :password, autocomplete: "off", class: "textIn" %>
           <% if @minimum_password_length %>
               <br />
@@ -46,21 +51,21 @@
         </div>
 
         <div class="field">
-          <%= f.label :current_password %> <i>(現在のパスワードを入力してください。)</i><br />
+          <%= f.label :current_password %> <i>(Please enter your current password.)</i><br />
           <%= f.password_field :current_password, autocomplete: "off", class: "textIn" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "変更" %>
+          <%= f.submit "Change" %>
         </div>
     <% end %>
 
-    <h3>アカウント削除</h3>
+    <h3>Delete account</h3>
 
     <p>Unhappy?
-      <%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "本当によろしいですか?" }, method: :delete, style:"background-color: #c14242;"%>
+      <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you really sure?" }, method: :delete, style:"background-color: #c14242;"%>
     </p>
 
-    <%= link_to "戻る", :back %>
+    <%= link_to "Back", :back %>
   </div>
 </div>

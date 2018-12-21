@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:google_oauth2]
   validates :name, presence: true, uniqueness: true
   validates :age, presence: true
+  enum gender: [:female, :male, :other]
+  validates :gender, presence: true
   has_many :images
   has_many :friendships
   has_many :messages
@@ -26,7 +28,7 @@ class User < ActiveRecord::Base
   
     unless user
       password = Devise.friendly_token[0,20]
-      user = User.new(:email => data.email, :password => password, :password_confirmation => password, :name => data["name"], :age => 0)
+      user = User.new(:email => data.email, :password => password, :password_confirmation => password, :name => data["name"], :age => 0, :gender => 'other')
       user.skip_confirmation!
       user.save!
     end

@@ -5,7 +5,9 @@ class FriendshipsController < ApplicationController
   # GET /friendships.json
   def index
     # @friendships = Friendship.all
-    @images = (Image.all - current_user.images).shuffle
+    @gender = current_user.gender
+    @suggest_user = User.where(gender: @gender)
+    @images = (Image.all - current_user.images - Image.where(user_id: @suggest_user)).shuffle
   end
 
   # GET /friendships/1

@@ -1,7 +1,7 @@
 <div class="wrapper fadeInDown">
   <div id="formContent" style="overflow-y: scroll; height:600px;">
     <!-- Tabs Titles -->
-    <h2 class="active"> アカウント登録 </h2>
+    <h2 class="active"> Account Registration </h2>
 
     <!-- Icon -->
     <div class="fadeIn first">
@@ -40,8 +40,18 @@
           <%= f.number_field :age, class: "textIn"%>
         </div>
 
+        <div class="field">
+          <%= f.label :gender %><br />
+          <%= f.radio_button(:gender, "male") %>
+          <%= f.label(:gender_male, "Male") %>
+          <%= f.radio_button(:gender, "female") %>
+          <%= f.label(:gender_female, "Female") %>
+          <%= f.radio_button(:gender, "other") %>
+          <%= f.label(:gender_female, "Other") %>
+        </div>
+
         <div class="actions">
-          <%= f.submit "アカウント登録" %>
+          <%= f.submit "Registration" %>
         </div>
     <% end %>
 

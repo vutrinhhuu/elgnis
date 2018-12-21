@@ -22,6 +22,8 @@ class ChatsController < ApplicationController
 
   def show
     @other_user = User.find(params[:other_user])
+    @avatar = @other_user.images.first
+    @my_avatar = current_user.images.first
     @chat = Chat.find_by(id: params[:id])
     @message = Message.new
   end

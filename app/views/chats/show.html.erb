@@ -1,15 +1,19 @@
 <div class="chat">
   <div class="chat-title">
-    <h1><%= @other_user.name %></h1>
+    <h1 style="color: #F05408;"><%= @other_user.name %></h1>
     <h2>Have a nice day!</h2>
     <figure class="avatar">
-      <img src="https://ui-avatars.com/api/?name=<%= @other_user.name %>" />
+      <% if @avatar.file.present?%>
+              <%= image_tag @avatar.file %>
+          <% else %>
+              <%= image_tag @avatar.link %>
+          <% end %>
     </figure>
   </div>
-<div class="scroll">
+<div class="scroll" style="overflow: scroll;">
   <% if @chat.messages.any? %>
-      <div id="messages" style="font-size: 16px; color: white; margin-left: 20px;">
-        <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc)%>
+      <div class="messages" id="messages" style="font-size: 16px; margin-left: 20px; margin-right:20px;">
+        <%= render partial: 'messages/message', collection: @chat.messages.order(id: :asc), locals: {current_user: current_user}%>
       </div>
   <%else%>
       <div id="messages">
